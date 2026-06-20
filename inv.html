@@ -1,0 +1,360 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priyanka & Asish | Engagement</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   COLOR PALETTE
+========================= */
+:root{
+    --maroon:#800000;
+    --gold:#D4AF37;
+    --cream:#FDFBF7;
+    --dark:#2c2c2c;
+    --light-gold:#f8f1d7;
+}
+
+/* =========================
+   RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:var(--cream);
+    color:var(--dark);
+    line-height:1.7;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+}
+
+/* CHANGE IMAGE HERE */
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+    url("YOUR_IMAGE_URL_HERE") center/cover no-repeat;
+    z-index:-1;
+}
+
+.hero-content{
+    color:white;
+    animation:fadeIn 2s ease;
+}
+
+.hero h1{
+    font-family:'Cinzel',serif;
+    font-size:3rem;
+}
+
+.hero h2{
+    font-weight:300;
+    margin-top:10px;
+}
+
+.hero-date{
+    color:var(--gold);
+    margin-top:10px;
+    font-weight:600;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section{
+    padding:60px 20px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+}
+
+.section-title{
+    font-family:'Cinzel',serif;
+    text-align:center;
+    color:var(--maroon);
+    margin-bottom:30px;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.countdown-box{
+    background:white;
+    padding:18px;
+    border-radius:12px;
+    text-align:center;
+    min-width:80px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.1);
+}
+
+.countdown-box span{
+    font-size:2rem;
+    color:var(--maroon);
+    font-weight:700;
+}
+
+/* =========================
+   DETAILS
+========================= */
+.details-grid{
+    display:grid;
+    gap:15px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,0.1);
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 22px;
+    background:var(--maroon);
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+.timeline{
+    max-width:700px;
+    margin:auto;
+    position:relative;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:20px;
+    width:2px;
+    height:100%;
+    background:var(--gold);
+}
+
+.item{
+    position:relative;
+    padding-left:60px;
+    margin-bottom:25px;
+}
+
+.dot{
+    position:absolute;
+    left:12px;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:var(--maroon);
+}
+
+/* =========================
+   RSVP
+========================= */
+.rsvp{
+    background:var(--maroon);
+    color:white;
+    text-align:center;
+}
+
+.rsvp .btn{
+    background:var(--gold);
+    color:black;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(min-width:768px){
+.hero h1{font-size:4rem;}
+.details-grid{grid-template-columns:1fr 1fr;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+<h1>Priyanka & Asish</h1>
+<h2>Are Getting Engaged</h2>
+<div class="hero-date">July 5, 2026</div>
+</div>
+</section>
+
+<!-- COUNTDOWN -->
+<section>
+<div class="container">
+<h2 class="section-title">Countdown to Our Day</h2>
+
+<div class="countdown">
+<div class="countdown-box"><span id="days">00</span><small>Days</small></div>
+<div class="countdown-box"><span id="hours">00</span><small>Hours</small></div>
+<div class="countdown-box"><span id="minutes">00</span><small>Min</small></div>
+<div class="countdown-box"><span id="seconds">00</span><small>Sec</small></div>
+</div>
+
+</div>
+</section>
+
+<!-- DETAILS -->
+<section>
+<div class="container">
+<h2 class="section-title">The Details</h2>
+
+<div class="details-grid">
+
+<div class="card">
+<h3>Time</h3>
+<p>11:00 AM onwards</p>
+</div>
+
+<div class="card">
+<h3>Venue</h3>
+
+<!-- CHANGE VENUE HERE -->
+<p>Woods Residency, Jeypore, Odisha</p>
+
+<!-- GOOGLE MAP LINK -->
+<a class="btn" href="YOUR_GOOGLE_MAP_LINK" target="_blank">
+Get Directions
+</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+<div class="container">
+<h2 class="section-title">Schedule</h2>
+
+<div class="timeline">
+
+<div class="item">
+<div class="dot"></div>
+<h3>Guest Arrival</h3>
+<p>Welcome & refreshments</p>
+</div>
+
+<div class="item">
+<div class="dot"></div>
+<h3>Ring Ceremony</h3>
+<p>Exchange of rings</p>
+</div>
+
+<div class="item">
+<div class="dot"></div>
+<h3>Photos</h3>
+<p>Family photo session</p>
+</div>
+
+<div class="item">
+<div class="dot"></div>
+<h3>Lunch</h3>
+<p>Celebration feast</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- RSVP -->
+<section class="rsvp">
+<div class="container">
+<h2>We'd Love to See You There</h2>
+<p>Please confirm your presence</p>
+
+<!-- RSVP FORM LINK -->
+<a class="btn" href="YOUR_GOOGLE_FORM_LINK" target="_blank">
+RSVP Now
+</a>
+
+</div>
+</section>
+
+<script>
+
+/* =========================
+   COUNTDOWN TIMER
+========================= */
+
+const eventDate =
+new Date("July 5, 2026 11:00:00").getTime();
+
+function updateCountdown(){
+
+const now = new Date().getTime();
+const diff = eventDate - now;
+
+if(diff < 0){
+return;
+}
+
+const d = Math.floor(diff / (1000*60*60*24));
+const h = Math.floor((diff % (1000*60*60*24))/(1000*60*60));
+const m = Math.floor((diff % (1000*60*60))/(1000*60));
+const s = Math.floor((diff % (1000*60))/1000);
+
+document.getElementById("days").innerText = d;
+document.getElementById("hours").innerText = String(h).padStart(2,'0');
+document.getElementById("minutes").innerText = String(m).padStart(2,'0');
+document.getElementById("seconds").innerText = String(s).padStart(2,'0');
+
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+</script>
+
+</body>
+</html>
+```
